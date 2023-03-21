@@ -18,7 +18,6 @@ public class ProductController {
 
     private final ProductService productService;
 
-
     @GetMapping("product")
     public List<ProductDto> readAllProducts() {
         return productService.readAllProducts();

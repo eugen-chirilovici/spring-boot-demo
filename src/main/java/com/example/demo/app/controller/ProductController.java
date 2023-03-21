@@ -1,6 +1,7 @@
 package com.example.demo.app.controller;
 
 import com.example.demo.app.dto.ProductDto;
+import com.example.demo.app.dto.enums.ProductType;
 import com.example.demo.app.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -24,8 +25,8 @@ public class ProductController {
     }
 
     @PostMapping(value = "product")
-    public ResponseEntity<String> saveProduct(@RequestParam String name) {
-        productService.createProduct(name);
+    public ResponseEntity<String> saveProduct(@RequestParam String name, @RequestParam ProductType type) {
+        productService.createProduct(name, type);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body("All good");
     }

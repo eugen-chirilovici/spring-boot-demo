@@ -1,4 +1,3 @@
-
 spring:
   datasource:
     url: jdbc:h2:mem:testdb
@@ -17,3 +16,15 @@ spring:
 #spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
 #
 #spring.jpa.show-sql=true
+
+
+# todo https://www.baeldung.com/spring-boot-change-port to take a look into
+service:
+  product:
+    pairs:
+      - type: TECH
+        label: expensive
+      - type: FOOD
+        label: cheap
+  system:
+    time: 50

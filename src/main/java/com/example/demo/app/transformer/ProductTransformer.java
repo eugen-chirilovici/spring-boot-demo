@@ -9,11 +9,15 @@ public class ProductTransformer {
     public static Function<ProductDto, ProductEntity> convertProductDtoToProductEntity =
             productDto -> ProductEntity.builder()
                     .name(productDto.getName())
+                    .productType(productDto.getProductType())
+                    .label(productDto.getLabel())
                     .build();
 
     public static Function<ProductEntity, ProductDto> convertProductToProductDto =
             productEntity -> ProductDto.builder()
                     .id(productEntity.getId())
                     .name(productEntity.getName())
+                    .productType(productEntity.getProductType())
+                    .label(productEntity.getLabel())
                     .build();
 }
